@@ -45,7 +45,7 @@ CORS_ORIGINS=https://nombre-del-proyecto.vercel.app
 
 Tambien se puede usar `CORS_ORIGINS=*` para pruebas o si el curso pide una configuracion abierta como la vista en clase.
 
-Si Vercel muestra `404: NOT_FOUND`, revisar que el archivo `vercel.json` este subido al repositorio. Ese archivo fuerza que las rutas `/`, `/auth/login` y `/api/products` entren a `index.js`.
+Si Vercel muestra `404: NOT_FOUND`, revisar que el archivo `vercel.json` y la carpeta `api/` esten subidos al repositorio. El archivo `api/index.js` exporta la app de Express para Vercel y `vercel.json` fuerza que las rutas `/`, `/auth/login` y `/api/products` entren a esa funcion.
 
 ## Autenticacion
 
