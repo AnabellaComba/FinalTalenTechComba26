@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿# API de cafeteria
 
 Proyecto final de Back-End con Node.js, Express, Firebase Firestore y JWT.
@@ -25,46 +24,6 @@ http://localhost:3000
 
 Vercel permite publicar esta API Express como una funcion serverless. El archivo `index.js` exporta `app` para Vercel y usa `app.listen` solamente cuando se ejecuta localmente con `npm run start`.
 
-Pasos recomendados:
-
-1. Subir el repositorio a GitHub.
-2. Entrar a Vercel e importar el repositorio.
-3. Configurar las variables de entorno del proyecto en Vercel.
-4. Hacer deploy.
-5. Entregar la URL generada, por ejemplo:
-
-```txt
-https://nombre-del-proyecto.vercel.app
-```
-
-En Vercel deben cargarse las mismas variables del `.env`, excepto `PORT`, porque Vercel administra el puerto internamente. Para CORS se puede usar:
-
-```env
-CORS_ORIGINS=https://nombre-del-proyecto.vercel.app
-```
-
-Tambien se puede usar `CORS_ORIGINS=*` para pruebas o si el curso pide una configuracion abierta como la vista en clase.
-
-## Autenticacion
-
-Para iniciar sesion:
-
-```http
-POST /auth/login
-Content-Type: application/json
-
-{
-  "email": "admin@gmail.com",
-  "password": "123456"
-}
-```
-
-La respuesta devuelve un token. Para usar las rutas de productos hay que enviarlo asi:
-
-```http
-Authorization: Bearer TU_TOKEN
-```
-
 El rol `admin` puede crear, editar, actualizar y eliminar productos. El rol `user` solo puede consultar productos.
 
 ## Rutas
@@ -90,20 +49,6 @@ app.use(cors(corsConfig));
 ```
 
 Los metodos permitidos son `GET`, `POST`, `PUT`, `PATCH` y `DELETE`. Los headers permitidos son `Content-Type` y `Authorization`.
-
-Para permitir todos los origenes, como en el ejemplo del curso:
-
-```env
-CORS_ORIGINS=*
-```
-
-Para restringirlo a origenes especificos, usar una lista separada por comas:
-
-```env
-CORS_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
-```
-
-Las solicitudes sin header `Origin`, como Postman, curl o PowerShell, se permiten para facilitar pruebas del proyecto.
 
 ## Cargar productos iniciales
 
@@ -134,6 +79,3 @@ FIREBASE_MEASUREMENT_ID=
 FIRESTORE_PRODUCTS_COLLECTION=
 FIRESTORE_USERS_COLLECTION=
 ```
-=======
-3
->>>>>>> origin/main
