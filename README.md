@@ -25,6 +25,48 @@ http://localhost:3000
 
 Vercel permite publicar esta API Express como una funcion serverless. El archivo `index.js` exporta `app` para Vercel y usa `app.listen` solamente cuando se ejecuta localmente con `npm run start`.
 
+Pasos recomendados:
+
+1. Subir el repositorio a GitHub.
+2. Entrar a Vercel e importar el repositorio.
+3. Configurar las variables de entorno del proyecto en Vercel.
+4. Hacer deploy.
+5. Entregar la URL generada, por ejemplo:
+
+```txt
+https://nombre-del-proyecto.vercel.app
+```
+
+En Vercel deben cargarse las mismas variables del `.env`, excepto `PORT`, porque Vercel administra el puerto internamente. Para CORS se puede usar:
+
+```env
+CORS_ORIGINS=https://nombre-del-proyecto.vercel.app
+```
+
+Tambien se puede usar `CORS_ORIGINS=*` para pruebas o si el curso pide una configuracion abierta como la vista en clase.
+
+Si Vercel muestra `404: NOT_FOUND`, revisar que el archivo `vercel.json` este subido al repositorio. Ese archivo fuerza que las rutas `/`, `/auth/login` y `/api/products` entren a `index.js`.
+
+## Autenticacion
+
+Para iniciar sesion:
+
+```http
+POST /auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@gmail.com",
+  "password": "123456"
+}
+```
+
+La respuesta devuelve un token. Para usar las rutas de productos hay que enviarlo asi:
+
+```http
+Authorization: Bearer TU_TOKEN
+```
+
 El rol `admin` puede crear, editar, actualizar y eliminar productos. El rol `user` solo puede consultar productos.
 
 ## Rutas
