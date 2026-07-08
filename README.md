@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿# API de cafeteria
 
 Proyecto final de Back-End con Node.js, Express, Firebase Firestore y JWT.
@@ -133,3 +134,6 @@ FIREBASE_MEASUREMENT_ID=
 FIRESTORE_PRODUCTS_COLLECTION=
 FIRESTORE_USERS_COLLECTION=
 ```
+=======
+3
+>>>>>>> origin/main
