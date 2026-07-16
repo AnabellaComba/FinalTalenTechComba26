@@ -122,3 +122,6 @@ FIREBASE_MEASUREMENT_ID=
 FIRESTORE_PRODUCTS_COLLECTION=
 FIRESTORE_USERS_COLLECTION=
 ```
+________________________________________________
+
+<img width="748" height="525" alt="image" src="https://github.com/user-attachments/assets/117453a0-7e7d-46bc-bf2e-ec369607c25d" />
